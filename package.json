@@ -1,0 +1,8 @@
+{
+  "name": "bb-crud-user",
+  "description": "a simple backbone CRUD user management demo app",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.x"
+  }
+}

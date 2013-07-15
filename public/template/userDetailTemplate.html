@@ -1,0 +1,23 @@
+<!-- used for both create and edit -->
+<h1>{{#if user.id}}Edit{{else}}Create{{/if}} User</h1>
+<form class="user-detail-form">
+	<label>Name</label>
+	<input type="text" name="name" value="{{#if user}}{{user.name}}{{/if}}"/>
+	<something></something>
+	<span class="error"></span>
+	<br>
+	<label>Score</label>
+	<input type="text" name="score" value="{{#if user}}{{user.score}}{{/if}}"/>
+	<span class="error"></span>
+	{{#if user.id}}
+	<input type="hidden" name="id" value="{{user.id}}"/>
+	{{/if}}
+</form>
+
+<div class="buttons">
+	<button class="save">Save</button>
+	<button class="cancel">Cancel</button>
+	{{#if user.id}}
+	<button class="delete">Delete</button>
+	{{/if}}
+</div>
