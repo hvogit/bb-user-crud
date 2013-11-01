@@ -37,7 +37,7 @@ Use either browser plugin/extension or commandline like below:
     curl -X DELETE localhost:8000/users/ALL
 
 ## Screenshots
-...
+....
 
 ## References:
 - [Backbone tutorials](http://backbonetutorials.com/organizing-backbone-using-modules/)
