@@ -34,6 +34,7 @@ Use either browser plugin/extension or commandline like below:
     curl -X POST -H  "Content-Type: application/json" localhost:8000/users -d '{"name":"Hugh Jackman", "score": 30}'
     curl -X PUT  -H  "Content-Type: application/json" localhost:8000/users/3 -d '{"sore": 50}'
     curl -X DELETE localhost:8000/users/2
+    curl -X DELETE localhost:8000/users/ALL
 
 ## References:
 - [Backbone tutorials](http://backbonetutorials.com/organizing-backbone-using-modules/)
