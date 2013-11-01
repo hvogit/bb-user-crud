@@ -1,7 +1,7 @@
 # bb-user-crud
 
 ## Introduction
-A single page app using latest front end technologies I learned including:
+A simple single page app using new front-end technologies I have learned:
 
 - **backbone.js** - MV* framework
 - **require.js** - dependenies and modulars management
@@ -22,6 +22,9 @@ A single page app using latest front end technologies I learned including:
     [19:50:9] DELETE /users/ALL
     All users cleared
     [19:50:9] GET /users
+
+    Open in browser:
+    http://localhost:8000
 
 ## How to test REST api
 Use either browser plugin/extension or commandline like below:

@@ -49,7 +49,7 @@ define([
     },
 
     doRender: function() {
-      console.debug('view model ', this.model);
+      console.debug('Rendering uses this view model ', this.model);
       // compile and cache template
       Handlebars.templates = Handlebars.templates || {};
       if (!Handlebars.templates['userDetailTemplate']) {
@@ -60,7 +60,7 @@ define([
         context.user = this.model.toJSON();
       }
       // apply template
-      console.debug('template context ', context);
+      console.debug('Template context ', context);
       var html = Handlebars.templates.userDetailTemplate(context);
       this.$el.html(html);
 

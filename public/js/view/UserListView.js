@@ -65,7 +65,7 @@ define([
           thisView.render();
         },
         error: function() {
-          console.error('error clear users');
+          console.error('Error removing users');
         }
       });
     }
