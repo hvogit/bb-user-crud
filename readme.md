@@ -37,7 +37,8 @@ Use either browser plugin/extension or commandline like below:
     curl -X DELETE localhost:8000/users/ALL
 
 ## Screenshots
-....
+![list](https://github.com/hvogit/bb-user-crud/raw/master/public/images/list.png)
+![detail](https://github.com/hvogit/bb-user-crud/raw/master/public/images/detail.png)
 
 ## References:
 - [Backbone tutorials](http://backbonetutorials.com/organizing-backbone-using-modules/)
