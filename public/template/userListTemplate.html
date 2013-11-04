@@ -1,10 +1,10 @@
 <h1>Users List</h1>
-<table border="1">
+<table>
 	<tr>
 		<th>id</th>
 		<th>name</th>
 		<th>score</th>
-		<th>actions</th>
+		<th></th>
 	</tr>
 
 	{{#each users}}
@@ -13,12 +13,13 @@
 		<td>{{name}}</td>
 		<td>{{score}}</td>
 		<td>
-			<a href="#/edit/{{id}}">edit</a>
+			<a class="button" href="#/edit/{{id}}">edit</a>
 		</td>
 	</tr>
 	{{/each}}
 </table>
 
-<button class="new">New</button>
-<button class="clear">Clear</button>
-
+<div class="buttons">
+	<a href="#/new" class="button new">new</a>
+	<a href="#/clear" class="button clear warn">clear</a>
+</div>

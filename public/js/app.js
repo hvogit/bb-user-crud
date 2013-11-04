@@ -2,8 +2,9 @@ define([
 		'jquery',
 		'underscore',
 		'backbone',
-		'router'
-], function($, _, Backbone, Router) {
+		'router',
+		'handlebar'
+], function($, _, Backbone, Router, Handlebars) {
 	// jQuery plugin to generate an js object from an input form
 	$.fn.serializeObject = function() {
 		var o = {};
@@ -23,6 +24,9 @@ define([
 
 	var initialise = function() {
 		Router.initialise();
+
+		// set up template engine
+		Handlebars.templates = Handlebars.templates || {};
 	};
 	return {
 		initialise: initialise

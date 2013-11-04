@@ -3,21 +3,21 @@
 <form class="user-detail-form">
 	<label>Name</label>
 	<input type="text" name="name" value="{{#if user}}{{user.name}}{{/if}}"/>
-	<something></something>
 	<span class="error"></span>
 	<br>
 	<label>Score</label>
 	<input type="text" name="score" value="{{#if user}}{{user.score}}{{/if}}"/>
 	<span class="error"></span>
+
 	{{#if user.id}}
 	<input type="hidden" name="id" value="{{user.id}}"/>
 	{{/if}}
 </form>
 
 <div class="buttons">
-	<button class="save">Save</button>
-	<button class="cancel">Cancel</button>
+	<a href="#" class="button save">Save</a>
+	<a href="#" class="button cancel">Cancel</a>
 	{{#if user.id}}
-	<button class="delete">Delete</button>
+	<a href="#" class="button delete warn">Delete</a>
 	{{/if}}
 </div>

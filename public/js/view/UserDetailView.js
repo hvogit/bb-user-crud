@@ -2,9 +2,10 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'handlebar',
     'model/UserModel',
     'text!template/userDetailTemplate.html'
-], function($, _, Backbone, UserModel, userDetailTemplate) {
+], function($, _, Backbone, Handlebars, UserModel, userDetailTemplate) {
 
   var UserDetailView = Backbone.View.extend({
     el: $("#page"),
@@ -40,18 +41,17 @@ define([
       if (options.id) {
         thisView.model.fetch({
           success: function(user) {
-            thisView.doRender();
+            thisView._render();
           }
         });
       } else {
-        thisView.doRender();
+        thisView._render();
       }
     },
 
-    doRender: function() {
+    _render: function() {
       console.debug('Rendering uses this view model ', this.model);
       // compile and cache template
-      Handlebars.templates = Handlebars.templates || {};
       if (!Handlebars.templates['userDetailTemplate']) {
         Handlebars.templates['userDetailTemplate'] = Handlebars.compile(userDetailTemplate);
       }
@@ -64,6 +64,7 @@ define([
       var html = Handlebars.templates.userDetailTemplate(context);
       this.$el.html(html);
 
+      // register model validation error handler
       this.listenTo(this.model, 'invalid', this.handleValidationErrors);
     },
 
@@ -72,10 +73,11 @@ define([
       var router = this.options.router;
 
       // var userDetails = $('.user-detail-form').serializeObject();
-      //var userModel = new UserModel();
-      this.model.save({}, {
+      // var userModel = new UserModel();
+      var model = this.model;
+      model.save({}, {
         success: function() {
-          console.debug('Model saved ', this.model);
+          console.debug('Model saved ', model);
           router.navigate('', {
             trigger: true
           });

@@ -12,8 +12,8 @@ define([
     el: $("#page"),
 
     events: {
-      'click .new': 'newUser',
-      'click .clear': 'clearUsers'
+      'click a.new': 'newUser',
+      'click a.clear': 'clearUsers'
     },
 
     render: function() {
@@ -23,20 +23,19 @@ define([
       var users = this.collection = new UserCollection();
       users.fetch({
         success: function(collection, response, options) {
-          doRender(collection);
+          _render(collection);
         },
         error: function(collection, response, options) {
           console.log('Error fetching users');
         }
       });
 
-      var doRender = function(collection) {
+      var _render = function(collection) {
         var context = {
           'users': collection.toJSON()
         };
 
         // compile and cache template
-        Handlebars.templates = Handlebars.templates || {};
         if (!Handlebars.templates['userListTemplate']) {
           Handlebars.templates['userListTemplate'] = Handlebars.compile(userListTemplate);
         }
