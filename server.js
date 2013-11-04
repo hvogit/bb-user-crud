@@ -10,13 +10,13 @@ app.use(express.static(__dirname + '/public'));
 
 // mock data and persistence service
 var users = [
-		{'id': 0, 'name': 'Hugh',  'score': 3},
-		{'id': 1, 'name': 'Bill',  'score': 4},
-		{'id': 2, 'name': 'Steve', 'score': 5}
+		{'id': 1, 'name': 'Hugh',  'score': 3},
+		{'id': 2, 'name': 'Bill',  'score': 4},
+		{'id': 3, 'name': 'Steve', 'score': 5}
 	],
 	count = users.length,
 	generateId = function () {
-		return count ++;
+		return ++count;
 	},
 	findById = function (id) {
 		for (var i = 0; i < users.length; i++) {
